@@ -1,0 +1,18 @@
+------------------------ Enunciado del Problema
+--Escriba una función noDoble que dada una cadena de caracteres retorne como resultado la misma cadena de caracteres 
+--eliminando los caracteres repetidos dos o más veces de manera consecutiva.
+
+-------------------------------- Explicación
+
+--La funcion no doble filtra una lista con repeticiones consecutivas de un mismo caracter en otra sin duplicados consecutivos
+
+------------------------------ Llamadas de Ejemplo 
+--noDoble ['a','b','c','c','c','c','f','a','b','a','d','d','e','f','f'] S: abcfabadef
+--noDoble ['a','a','c','c','b','c','f','a','b','b','d','h','o','i','i'] S: acbcfabdhoi
+
+-------------------------------- Resolución
+--Verifica si el caracter actual con el siguiente si son diferentes lo enlista si son iguales salta al siguiente y 
+--vuelve a comprobar
+noDoble :: [Char]->[Char]
+noDoble [] = []
+noDoble (x:xs)= if ((xs==[]))  then x:noDoble xs else (if(x==head(xs)) then noDoble xs else x:noDoble xs)
